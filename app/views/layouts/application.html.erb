@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>metsson</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>metsson 
+        <small>Web ideas that excite!</small>        
+        </h1>
+    </header>
+    <%= yield %>
+</div>
+<div class="container">
+    <aside>
+        <h3>social <span class="metsson-logo">metsson</span></h3>
+        <a href="http://facebook.com/socialmetsson">Facebook</a>
+    </aside>
+</div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>

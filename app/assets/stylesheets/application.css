@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    background: linear-gradient(270deg, #0b0b0b, #323131);
+    background-size: 400% 400%;    
+    -webkit-animation: MetssonGradient 30s ease infinite;
+    -moz-animation: MetssonGradient 30s ease infinite;
+    animation: MetssonGradient 30s ease infinite;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, .9);
+}
+
+.container {
+    max-width: 600px;
+    padding: 50px 15px;
+}
+
+header h1 {
+    font-family: 'Marketing Script', cursive;
+}
+
+header h1 small {
+    vertical-align: middle;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 50%;
+}
+
+@-webkit-keyframes MetssonGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes MetssonGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes MetssonGradient { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@media screen and (max-width:720px) {    
+    .container {
+        text-align: center;
+    }
+
+    header h1 small {
+        display: block;
+    }
+
+    aside {
+        margin-top: -50px;
+    }
+}
