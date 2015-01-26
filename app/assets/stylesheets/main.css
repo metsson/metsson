@@ -1,0 +1,68 @@
+body {
+    background: linear-gradient(270deg, #23369f, #556cf3, #a9b1e4);
+    background-size: 400% 400%;    
+    -webkit-animation: MetssonGradient 30s ease infinite;
+    -moz-animation: MetssonGradient 30s ease infinite;
+    animation: MetssonGradient 30s ease infinite;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, .9);
+}
+
+small, .small {
+    color: #fff;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 255, 255, .8);
+}
+
+a:hover, a:active, a:visited {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+}
+.container {
+    max-width: 600px;
+    padding: 50px 15px;
+}
+
+.metsson-logo {
+    font-family: 'Marketing Script', cursive;
+}
+
+header h1 small {
+    font-size: 50%;
+    color: #fff;
+}
+
+@-webkit-keyframes MetssonGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes MetssonGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes MetssonGradient { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@media screen and (max-width:720px) {    
+    .container {
+        text-align: center;
+    }
+
+    header h1 small {
+        display: block;
+    }
+
+    aside {
+        margin-top: -60px;
+    }
+}
