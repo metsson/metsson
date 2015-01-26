@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 <!-- CDNs -->
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all' %>
 <%= csrf_meta_tags %>
 </head>
 <body>
@@ -39,7 +39,7 @@
             </li> 
             <li>            
                 <i class="fa fa-phone"></i> 
-                <a href="callto:0046723188514"> +46 72 318 85 14</a>
+                <a href="tel:0046723188514"> +46 72 318 85 14</a>
             </li>                        
             <li>            
                 <i class="fa fa-facebook"></i> 
@@ -55,6 +55,6 @@
         </ul>          
     </footer>
 </div>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application' %>
 </body>
 </html>
