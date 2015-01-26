@@ -15,7 +15,7 @@
  */
 
 body {
-    background: linear-gradient(270deg, #0b0b0b, #323131);
+    background: linear-gradient(270deg, #23369f, #556cf3, #a9b1e4);
     background-size: 400% 400%;    
     -webkit-animation: MetssonGradient 30s ease infinite;
     -moz-animation: MetssonGradient 30s ease infinite;
@@ -24,19 +24,33 @@ body {
     text-shadow: 0 0 4px rgba(0, 0, 0, .9);
 }
 
+small, .small {
+    color: #fff;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 255, 255, .8);
+}
+
+a:hover, a:active, a:visited {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+}
 .container {
     max-width: 600px;
     padding: 50px 15px;
 }
 
-header h1 {
+.metsson-logo {
     font-family: 'Marketing Script', cursive;
 }
 
 header h1 small {
-    vertical-align: middle;
-    font-family: 'Tahoma', sans-serif;
     font-size: 50%;
+    color: #fff;
 }
 
 @-webkit-keyframes MetssonGradient {
@@ -65,6 +79,6 @@ header h1 small {
     }
 
     aside {
-        margin-top: -50px;
+        margin-top: -60px;
     }
 }

@@ -1,24 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>metsson</title>
+<%= yield(:meta_tags) %>
+<!-- Favicon/touch icons -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="metsson">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<!-- Apple -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-startup-image" href="/apple-startup.png">
+<!-- Touch icons -->
+<link rel="apple-touch-icon" href="/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
+<!-- CDNs -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
     <header>
-        <h1>metsson 
+        <h1><span class="metsson-logo">metsson</span>
         <small>Web ideas that excite!</small>        
         </h1>
     </header>
     <%= yield %>
 </div>
 <div class="container">
-    <aside>
-        <h3>social <span class="metsson-logo">metsson</span></h3>
-        <a href="http://facebook.com/socialmetsson">Facebook</a>
-    </aside>
+    <footer>   
+        <ul class="list-inline small text-muted">
+            <li>            
+                <i class="fa fa-inbox"></i> 
+                <a href="mailto:merkur@metsson.se"> merkur@metsson.se</a>
+            </li> 
+            <li>            
+                <i class="fa fa-phone"></i> 
+                <a href="callto:0046723188514"> +46 72 318 85 14</a>
+            </li>                        
+            <li>            
+                <i class="fa fa-facebook"></i> 
+                <a href="http://facebook.com/socialmetsson"> facebook.com/socialmetsson</a>
+            </li>
+            <li>            
+                <i class="fa fa-github"></i> 
+                <a href="http://github.com/metsson"> github.com/metsson</a>
+            </li>  
+            <li>
+                &copy; <%= Time.now.year %> <span class="metsson-logo">metsson</span>
+            </li>
+        </ul>          
+    </footer>
 </div>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
