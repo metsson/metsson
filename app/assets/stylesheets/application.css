@@ -13,10 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- @font-face {
-    font-family: 'Marketing Script';
-    src: url("<%= asset_url('fonts/MarketingScript.tff') %>");
-    font-weight: normal;
-    font-style: normal;
-}
