@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
 <%= yield(:meta_tags) %>
 <!-- Favicon/touch icons -->
@@ -16,46 +16,50 @@
 <link rel="apple-touch-icon" sizes="76x76" href="/touch-icon-ipad.png">
 <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
 <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 <!-- CDNs -->
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <%= stylesheet_link_tag    'application', media: 'all' %>
 <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="container">
-    <header>
-        <h1><span class="metsson-logo">metsson</span>
-        <small>Web ideas that excite!</small> 
-        <div class="fb-like" data-href="https://www.facebook.com/socialmetsson" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>               
-        </h1>
-    </header>
-    <%= yield %>
-</div>
-<div class="container">
-    <footer>   
-        <ul class="list-inline small text-muted">
-            <li>            
-                <i class="fa fa-inbox"></i> 
-                <a href="mailto:merkur@metsson.se"> merkur@metsson.se</a>
-            </li> 
-            <li>            
-                <i class="fa fa-phone"></i> 
-                <a href="tel:0046723188514"> +46 72 318 85 14</a>
-            </li>                        
-            <li>            
-                <i class="fa fa-facebook"></i> 
-                <a href="http://facebook.com/socialmetsson"> facebook.com/socialmetsson</a>
-            </li>
-            <li>            
-                <i class="fa fa-github"></i> 
-                <a href="http://github.com/metsson"> github.com/metsson</a>
-            </li>  
-            <li>
-                &copy; <%= Time.now.year %> <span class="metsson-logo">metsson</span>
-            </li>
-        </ul>          
-    </footer>
-</div>
+<body class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Metsson</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <%= active_link_to 'Om', root_path, wrap_tag: :li %>
+                </li>
+                <li>
+                    <a href="#">Projekt</a>
+                </li>
+                <li>
+                    <a href="#">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<%= yield %>
 <%= javascript_include_tag 'application' %>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
