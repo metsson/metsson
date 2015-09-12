@@ -20,13 +20,9 @@
                 enkelt ditt webbprojekt är, så har du nu hamnat i rätta händer.
             </p>
             <p class="big-size-action-buttons">
-                <button class="btn btn-success">
-                    Kontakta mig
-                </button>
+                <%= link_to 'Kontakta mig', contact_path, class: 'btn btn-success' %>
                 <em class="small">eller</em>
-                <button class="btn btn-default">
-                    Låt dig inspireras
-                </button>
+                <%= link_to 'Låt dig inspireras', projects_path, class: 'btn btn-default' %>
             </p>
         </div>
         <div class="col-md-5 col-md-offset-1 hidden-sm hidden-xs big-size-merkur-with-polo">

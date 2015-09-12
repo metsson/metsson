@@ -23,5 +23,8 @@ group :production do
     gem 'ngannotate-rails'    
 end
 
+# Image handler gem
+gem 'paperclip'
+
 # APIs and APIs' related gems
 gem 'will_paginate', '~> 3.0.6'

@@ -31,6 +31,10 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     erubis (2.7.0)
     execjs (2.2.2)
     hike (1.2.3)
@@ -48,6 +52,11 @@ GEM
       execjs
       rails (>= 3.1)
     non-stupid-digest-assets (1.0.4)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.18.1)
     puma (2.11.0)
       rack (>= 1.1, < 2.0)
@@ -102,6 +111,7 @@ DEPENDENCIES
   jquery-rails
   ngannotate-rails
   non-stupid-digest-assets
+  paperclip
   pg
   puma
   rails (= 4.1.6)

@@ -39,19 +39,31 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Metsson</a>
+            <%= active_link_to root_path, class: 'navbar-brand' do %>
+                Metsson
+            <% end %>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <%= link_to root_path, class: 'dropdown-toggle', "data-toggle" => 'dropdown', "aria-expanded" => 'false', "role" => 'button' do %>
+                        Om <span class="caret"></span>
+                    <% end %>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <%= active_link_to 'Kontakt', contact_path, wrap_tag: :li %>
+                        </li>                        
+                        <li class="divider"></li>
+                        <li>
+                            <%= active_link_to 'Om Merkur', merkur_path, wrap_tag: :li %>
+                        </li>
+                    </ul>
                 <li>
-                    <%= active_link_to 'Om', root_path, wrap_tag: :li %>
+                    <%= active_link_to 'Projekt', projects_path, wrap_tag: :li %>
                 </li>
                 <li>
-                    <a href="#">Projekt</a>
-                </li>
-                <li>
-                    <a href="#">Kontakt</a>
+                    <%= active_link_to 'Kontakt', contact_path, wrap_tag: :li %>
                 </li>
             </ul>
         </div>

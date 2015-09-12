@@ -1,2 +1,32 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<div class="container">
+    <h1>
+        Se dig omkring hur en <%= link_to 'webbutvecklare', merkur_path, title: 'Merkur Hoxha', rel: 'self' %> tar fram framtidssäkra och upplevelserika webbapplikationer.
+    </h1>
+    <section class="lead">
+        <p>
+            Bort med gammalt, slentrianmässigt producerat webbmaterial. I min värld är "hemsida" ett fult ord som är passé. Istället, pratar vi webbutvecklare om <strong>webbapplikationer</strong>!
+        </p>
+        <p>
+            <%= link_to 'Här', projects_path %> listar jag ett axplock av mina 
+            applikationer. Målet är att dels få dig att förstå hur mycket innovativt tänk som finns att tillgå ifrån min sida, dels försäkra dig om att möjligheterna är obegränsade genom att kombinera <strong>min kompetens</strong> med <strong>din webbidé</strong>.
+        </p>
+    </section>
+    <article>     
+        
+        <% @projects.each_slice(4) do |projects| %>
+            <div class="row">
+            <% projects.each do |project| %>
+            <div class="col-md-3 projects-item">
+                <h3>
+                    <%= project.title %>
+                </h3>
+                <p>
+                    <%= truncate(project.short_description, length: 100) { link_to " Läs mer", project_path(id: project, title: project.url_title)} %>
+                </p>
+            </div>
+            <% end %>
+            </div>
+        <% end %>   
+        </div>
+    </article>
+</div>
