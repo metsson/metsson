@@ -1,3 +1,32 @@
 .projects-item {
     margin-bottom: 25px;
 }
+
+.project-picture-gallery {
+    padding: 35px 0;
+}
+
+.portfolio-items {
+    margin: 30px auto;
+    padding: 10px 0;
+}
+
+.portfolio-items img {
+    max-height: 200px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.portfolio-item:nth-child(2) {
+    border-bottom: 30px solid #ddd;
+}
+
+@media screen and (max-width: 680px) {
+    .project-picture-gallery ul {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 135px;
+    white-space:nowrap
+    }
+}

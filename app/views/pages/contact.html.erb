@@ -1,2 +1,42 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<% content_for :meta_tags do %>
+<title>Kontakta mig när det gäller webbutveckling</title>
+<% end %>
+
+<div class="container">
+    <h1>
+        Tveka inte att höra av dig. 
+    </h1>
+    <section>
+        <p class="lead">
+            Oavsett vem du är eller vad du söker, när du hör av dig angående Internet så är jag idel öra och lovar att göra mitt bästa för att hjälpa dig med dina frågor.
+        </p>
+    </section>
+
+    <%= form_for @case, url: customer_case_path(id: @case.id), html: { multipart: true }, class: 'form-horizontal' do |f| %>
+      <div class="form-group">
+        <%= f.label 'Name', class: 'col-lg-2 control-label' %>
+        <div class="col-lg-10">
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Vem är du?' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Mailadress', class: 'col-lg-2 control-label' %>
+        <div class="col-lg-10">
+          <%= f.text_field :email_address, class: 'form-control', placeholder: 'Din mailadress' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Ditt ärende', class: 'col-lg-2 control-label' %>
+        <div class="col-lg-10">
+          <%= f.text_area :case, rows: '10', class: 'form-control', placeholder: 'Berätta vad ditt ärende gäller...' %>
+        </div>
+      </div>   
+      <div class="form-group pull-right">
+        <div class="col-lg-10 col-lg-offset-2">
+            <%= button_tag type: :submit, class: 'btn btn-success' do %> 
+                <i class="fa fa-envelope"></i> Skicka
+            <% end %>
+        </div>
+      </div>
+    <% end %> 
+</div>

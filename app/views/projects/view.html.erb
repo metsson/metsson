@@ -2,30 +2,39 @@
     <h1>
         <%= @project.title %>
     </h1>
-    <% if @project.project_pictures.size > 0 %>
-        <div class="row">
-        <% @project.project_pictures.each do |picture| %>
-            <div class="col-sm-4 portfolio-item">
-                <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <i class="fa fa-search-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <%= image_tag picture.avatar.url(:thumb), class: "img-responsive" %>
-                </a>
-            </div>
-        <% end %>
-        </div><!-- .row -->
-    <% end %>
     <article>
         <section>
             <p class="lead">
                 <%= @project.short_description %>
             </p>
         </section>
+        <!-- Project pics -->
+        <% if @project.project_pictures.size > 0 %>
+        <div id="links" class="project-picture-gallery">
+            <ul class="list-inline text-center">                       
+                <% @project.project_pictures.take(6).each do |picture| %>
+                <li class="animated shake">
+                <%= link_to picture.avatar.url(:original), "data-gallery" => "" do %>
+                    <%= image_tag picture.avatar.url(:thumb), class: "img-responsive" %>
+                <% end %>
+                </li>
+                <% end %>
+            </ul>
+            </div>            
+        <% end %>
+        <!-- Project pics -->        
         <section>
             <%= raw @project.long_description %>
         </section>                
     </article>
+</div>
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title">Visar bilder för '<%= @project.title %>'</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
 </div>
