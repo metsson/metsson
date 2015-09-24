@@ -62,11 +62,18 @@ class Manager::ProjectsController < ApplicationController
         }
       end
 
+      # Make images for a project primary if checked
+      if params[:primary_images] and @project
+        params[:primary_images].each { |image_id|
+          @picture = ProjectPicture.find(image_id) rescue nil
+          @picture.update(is_primary: true) unless @picture.nil?
+        }
+      end
       # Delete images if any selected
       if params[:deleted_images] and @project 
         params[:deleted_images].each { |image_id|
           @picture = ProjectPicture.find(image_id) rescue nil
-          @picture.destroy
+          @picture.destroy unless @picture.nil?
         }
       end
     end

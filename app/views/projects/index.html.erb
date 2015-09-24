@@ -25,14 +25,16 @@ id="portfolio"
                     <%= project.title %>
                 </h3>
                 <div class="screen">
-                    <% if project_has_a_thumbnail? project %>
-                        <%= link_to project_path(id: project.id, title: project.url_title) do %>
-                            <%= image_tag project.project_pictures.first.avatar.url(:medium), class: "img-responsive" %>
-                        <% end %>            
+                    <% if project_has_thumbnails? project %>
+                        <% get_primary_pictures(project).each do |picture| %>
+                            <%= link_to project_path(id: project.id, title: project.url_title) do %>
+                                <%= image_tag picture.avatar.url(:medium), class: "img-responsive" %>
+                            <% end %>            
+                        <% end %>
                     <% end %>
                 </div>
                 <p class="description">
-                <%= truncate(project.short_description, length: 100) { link_to " Läs mer", project_path(id: project, title: project.url_title)} %>
+                <%= truncate(project.short_description, length: 200) { link_to " Läs mer", project_path(id: project, title: project.url_title)} %>
                 </p>
                 <div class="divider"></div>
                 <div class="visit">

@@ -7,55 +7,68 @@
         <span class="button"> 
         <i class="fa fa-angle-double-left"></i> Se fler projekt
         </span>
-    <% end %>    
-    <h1>
-        <%= @project.title %>
-    </h1>
-    <article>
-        <section>
-            <p class="lead">
-                <%= @project.short_description %>
-            </p>
-        </section>
-        <!-- Project pics -->
-        <% if @project.project_pictures.size > 0 %>
-        <div id="links" class="project-picture-gallery">
-            <ul class="list-inline text-center">                       
-                <% @project.project_pictures.take(6).each do |picture| %>
-                <li class="animated shake">
-                <%= link_to picture.avatar.url(:original), "data-gallery" => "" do %>
-                    <%= image_tag picture.avatar.url(:thumb), class: "img-responsive" %>
-                <% end %>
-                </li>
-                <% end %>
-            </ul>
+    <% end %> 
+    <div class="row">   
+        <div class="col-md-7">
+            <div class="project-header">
+                <h1>
+                    <%= @project.title %>
+                </h1>
+                <section>
+                    <p class="lead">
+                        <%= @project.short_description %>
+                    </p>
+                    <% if project_has_thumbnails? @project %>
+                        <%= image_tag(get_primary_pictures(@project).first.avatar.url(:medium), class: "img-responsive project-big-picture") %>
+                    <% end %>
+                </section>
+            </div>
+            <article>
+                <%= raw @project.long_description %>
+                <% if project_has_thumbnails? @project %>
+                <%= image_tag(get_primary_pictures(@project).second.avatar.url(:medium), class: "img-responsive project-big-picture") %>
+                <% end %>            
+            </article> 
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5">
+            <!-- Project pics -->
+            <% if @project.project_pictures.size > 0 %>
+            <div id="links" class="project-picture-gallery">
+                <ul class="list-inline text-center">                       
+                    <% @project.project_pictures.take(10).each do |picture| %>
+                    <li class="animated shake">
+                    <%= link_to picture.avatar.url(:original), "data-gallery" => "" do %>
+                        <%= image_tag picture.avatar.url(:thumb), class: "img-responsive" %>
+                    <% end %>
+                    </li>
+                    <% end %>
+                </ul>
             </div>            
-        <% end %>
-        <!-- Project pics -->        
-        <section>
-            <%= raw @project.long_description %>
-        </section>                
-        <aside>
-            <div class="well">          
-            <h2>Låter detta projekt kul?</h2>
-            <p> 
-                Om du har något liknande på gång eller vill veta mer om projektet, tveka inte att <%= link_to 'höra av dig', contact_path %>!
-            </p>
-            <p>
-            <%= link_to projects_path do %>
-                <span class="btn btn-default btn-xs"> 
-                <i class="fa fa-angle-double-left"></i> Se fler projekt
-                </span>
-            <% end %> <em>eller</em>
-            <%= link_to contact_path do %>
-                <span class="button btn-xs"> 
-                <i class="fa fa-envelope"></i> Kontakta mig!
-                </span>
-            <% end %>
-            </p>
-            </div>        
-        </aside>           
-    </article> 
+            <% end %><!-- Project pics -->   
+            <aside>
+                <div class="well">          
+                <h2>Låter detta kul?</h2>
+                <p> 
+                    Om du har något liknande på gång eller vill veta mer om projektet, tveka inte att <%= link_to 'höra av dig', contact_path %>!
+                </p>
+                <p>
+                <%= link_to projects_path do %>
+                    <span class="btn btn-default btn-xs"> 
+                    <i class="fa fa-angle-double-left"></i> Se fler projekt
+                    </span>
+                <% end %> <em>eller</em>
+                <%= link_to contact_path do %>
+                    <span class="btn btn-success btn-xs"> 
+                    <i class="fa fa-envelope"></i> Kontakta mig!
+                    </span>
+                <% end %>
+                </p>
+                </div>        
+            </aside>                          
+        </div>
+        <!-- Sidebar -->
+    </div>
 </div>
 
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">

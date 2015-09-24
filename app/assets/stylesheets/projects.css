@@ -6,6 +6,28 @@
     padding: 35px 0;
 }
 
+.project-header {
+    padding-right: 2em;
+}
+
+    .project-header h1 {
+        color: rgba(0,0,0, .8);
+        font-size: 2.1em;
+    }
+
+    .project-header p {
+        color: rgba(0,0,0, .6);
+        font-size: 1.5em;
+        text-transform: uppercase;
+    }    
+
+    .project-big-picture {
+        margin: 1.2em auto;
+        max-width: 20em;
+        text-align: center;
+        vertical-align: middle;
+    }
+
 @media screen and (max-width: 680px) {
     .project-picture-gallery ul {
     overflow-x: scroll;
