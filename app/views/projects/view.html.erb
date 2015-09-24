@@ -1,4 +1,13 @@
+<%= content_for :meta_tags do %>
+<title><%= @project.title %></title>
+<% end %>
+
 <div class="container">
+    <%= link_to projects_path do %>
+        <span class="button"> 
+        <i class="fa fa-angle-double-left"></i> Se fler projekt
+        </span>
+    <% end %>    
     <h1>
         <%= @project.title %>
     </h1>
@@ -26,7 +35,27 @@
         <section>
             <%= raw @project.long_description %>
         </section>                
-    </article>
+        <aside>
+            <div class="well">          
+            <h2>Låter detta projekt kul?</h2>
+            <p> 
+                Om du har något liknande på gång eller vill veta mer om projektet, tveka inte att <%= link_to 'höra av dig', contact_path %>!
+            </p>
+            <p>
+            <%= link_to projects_path do %>
+                <span class="btn btn-default btn-xs"> 
+                <i class="fa fa-angle-double-left"></i> Se fler projekt
+                </span>
+            <% end %> <em>eller</em>
+            <%= link_to contact_path do %>
+                <span class="button btn-xs"> 
+                <i class="fa fa-envelope"></i> Kontakta mig!
+                </span>
+            <% end %>
+            </p>
+            </div>        
+        </aside>           
+    </article> 
 </div>
 
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">

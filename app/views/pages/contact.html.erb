@@ -2,41 +2,43 @@
 <title>Kontakta mig när det gäller webbutveckling</title>
 <% end %>
 
-<div class="container">
-    <h1>
-        Tveka inte att höra av dig. 
-    </h1>
-    <section>
-        <p class="lead">
-            Oavsett vem du är eller vad du söker, när du hör av dig angående Internet så är jag idel öra och lovar att göra mitt bästa för att hjälpa dig med dina frågor.
+    <div class="jumbotron landing-splash contact">
+      <div class="container">
+        <h1 class="animated bounceInDown">Jag älskar webbsnack!</h1>
+        <p class="animated bounceInRight">
+            Det spelar ingen roll vem du är. Inte heller vad du söker.
+            Såvida du skriver till mig om webb så är jag idel öra.
         </p>
-    </section>
+      </div>
+    </div>
 
-    <%= form_for @case, url: customer_case_path(id: @case.id), html: { multipart: true }, class: 'form-horizontal' do |f| %>
-      <div class="form-group">
-        <%= f.label 'Name', class: 'col-lg-2 control-label' %>
-        <div class="col-lg-10">
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Vem är du?' %>
-        </div>
+<div class="container">
+  <%= render 'waiting_time', show_button: false %>
+  <%= form_for @case, url: customer_case_path(id: @case.id), html: { multipart: true } do |f| %>
+    <div class="form-group">
+      <%= f.label 'Namn', class: 'col-lg-2 control-label' %>
+      <div class="col-lg-10">
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Vem är du?' %>
       </div>
-      <div class="form-group">
-        <%= f.label 'Mailadress', class: 'col-lg-2 control-label' %>
-        <div class="col-lg-10">
-          <%= f.text_field :email_address, class: 'form-control', placeholder: 'Din mailadress' %>
-        </div>
+    </div>
+    <div class="form-group">
+      <%= f.label 'Mailadress', class: 'col-lg-2 control-label' %>
+      <div class="col-lg-10">
+        <%= f.text_field :email_address, class: 'form-control', placeholder: 'Din mailadress' %>
       </div>
-      <div class="form-group">
-        <%= f.label 'Ditt ärende', class: 'col-lg-2 control-label' %>
-        <div class="col-lg-10">
-          <%= f.text_area :case, rows: '10', class: 'form-control', placeholder: 'Berätta vad ditt ärende gäller...' %>
-        </div>
-      </div>   
-      <div class="form-group pull-right">
-        <div class="col-lg-10 col-lg-offset-2">
-            <%= button_tag type: :submit, class: 'btn btn-success' do %> 
-                <i class="fa fa-envelope"></i> Skicka
-            <% end %>
-        </div>
+    </div>
+    <div class="form-group">
+      <%= f.label 'Ärende', class: 'col-lg-2 control-label' %>
+      <div class="col-lg-10">
+        <%= f.text_area :case, rows: '10', class: 'form-control', placeholder: 'Berätta vad du vill veta eller ha hjälp med...' %>
       </div>
-    <% end %> 
+    </div>   
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+          <%= button_tag type: :submit, class: 'btn btn-success contact-form-button' do %> 
+              <i class="fa fa-envelope"></i> Skicka
+          <% end %>
+      </div>
+    </div>
+  <% end %> 
 </div>

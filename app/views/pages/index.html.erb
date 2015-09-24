@@ -1,65 +1,51 @@
 <% content_for :meta_tags do %>
 <title>Webbutvecklingsbyrån med det lilla extra</title>
 <% end %>
-<!-- Splash -->
-<div class="container">
-    <div class="row big-size">
-        <div class="col-md-6 col-sm-12">
-            <h1>
-                Din webbdröm. Mitt uppdrag.
-            </h1>
-            <p>
-               Sitter du på en kul webbidé? Eller har du insett att 
-               ditt företag behöver uppdateras till den representation på webben som år 
-               <%= Time.now.year %> kräver? 
-            </p>
-            <p>
-                Då har ditt letande nått sitt slut här på Metsson!
-                Jag som driver Metsson heter <strong>Merkur Hoxha</strong> och
-                har djupa kunskaper inom webbentrepenad. Oavsett hur stort, galet eller
-                enkelt ditt webbprojekt är, så har du nu hamnat i rätta händer.
-            </p>
-            <p class="big-size-action-buttons">
-                <%= link_to 'Kontakta mig', contact_path, class: 'btn btn-success' %>
+    <div class="jumbotron landing-splash home">
+      <div class="container">
+        <h1 class="animated bounceInDown">Din webbdröm. Mitt uppdrag.</h1>
+        <p class="animated bounceInRight">
+            Hej! Mitt namn är <%= link_to 'Merkur', merkur_path %>. En webbentreprenör med djupa kunskaper inom webbutveckling. Oavsett hur stort, galet eller litet ditt webbprojekt är så är jag idel öra!
+        </p>
+        <p class="landing-splash-buttons animated bounceInLeft">
+                <%= link_to 'Kontakta mig', contact_path, class: 'btn btn-primary btn-lg' %>
                 <em class="small">eller</em>
-                <%= link_to 'Låt dig inspireras', projects_path, class: 'btn btn-default' %>
-            </p>
-        </div>
-        <div class="col-md-5 col-md-offset-1 hidden-sm hidden-xs big-size-merkur-with-polo">
-            <img src="//placehold.it/600x450" class="img-responsive">
-        </div>
-    </div><!-- Splash -->
+                <%= link_to 'Låt dig inspireras', projects_path, class: 'btn btn-default' %>        
+        </p>
+      </div>
+    </div>
+<div class="container">        
     <!-- Quick services' info -->
     <div class="row quick-about-services">
         <div class="col-md-4 col-sm-12">
             <div class="quick-about-services-icon">
-                <i class="fa fa-cogs fa-5x"></i>
+                <%= image_tag('circle-icons/full-color/dev.png', class: 'img-responsive') %>
             </div>
-            <h2 class="text-success">
-                Inga halvdana lösningar
+            <h2>
+                Seriös utveckling
             </h2>
             <p>
-                Med Metsson kan du bara luta dig tillbaka med vetskapen att enbart <strong>webbstandard</strong> samt <strong>professionella</strong> lösningar gäller.
+                Med Metsson kan du bara luta dig tillbaka och veta att enbart <strong>webbstandard</strong> samt <strong>professionella</strong> lösningar gäller.
             </p>
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="quick-about-services-icon">
-                <i class="fa fa-bolt fa-5x"></i>
+                <%= image_tag('circle-icons/full-color/rocket.png', class: 'img-responsive') %>
             </div>            
-            <h2 class="text-success">
-                Blixtsnabb webbserver
+            <h2>
+                Webbhotell ingår
             </h2>
             <p>
-                Du får ävenwebbhotell där säkerhet och supersnabba svarstider är en självklarhet. Helt <strong>kostnadsfritt</strong> första året!
+                Igenom din nya webbapplikation får du även webbhotell där säkerhet och supersnabba svarstider är en självklarhet. Helt <strong>kostnadsfritt</strong> första året!
 
             </p>
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="quick-about-services-icon">
-                <i class="fa fa-dollar fa-5x"></i>
+                <%= image_tag('circle-icons/full-color/lightbulb.png', class: 'img-responsive') %>
             </div>            
-            <h2 class="text-success">
-                Erfaret affärssinne ingår
+            <h2>
+                Erfaret affärssinne
             </h2>
             <p>
                 Oavsett om du är ny på webben eller inte så får du alltid tips av mig om olika <strong>affärsmodeller</strong>
@@ -67,4 +53,5 @@
             </p>
         </div>           
     </div><!-- Quick services' info -->
+    <%= render 'waiting_time', show_button: true %>
 </div><!-- container -->

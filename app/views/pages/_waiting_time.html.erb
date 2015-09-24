@@ -1,0 +1,12 @@
+  <!-- Action -->
+  <div class="well take-action-box animated fadeIn">
+      <p class="text-center">
+        <%= image_tag('circle-icons/full-color/clock.png', class: 'img-responsive') %>
+      </p>
+      <p>      
+      Just nu är det cirka <strong>45</strong> dagars väntetid för nya projekt.
+      <% if show_button %>
+      <%= link_to 'Kontakta mig', contact_path, class: 'btn btn-success btn-sm' %>
+      <% end %>
+      </p>
+  </div><!-- Action -->    

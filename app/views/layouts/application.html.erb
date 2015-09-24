@@ -28,7 +28,7 @@
 <%= stylesheet_link_tag    'application', media: 'all' %>
 <%= csrf_meta_tags %>
 </head>
-<body class="animated fadeIn">
+<body <%= yield(:body_id) %> class="animated fadeIn">
 <!-- Navigation -->
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="container">
