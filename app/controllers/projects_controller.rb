@@ -10,9 +10,9 @@ class ProjectsController < ApplicationController
         else
             raise 'No id or title given'
         end
-    rescue 
-        flash[:notice] = "Projekted du sökte efter kunde inte hittas."
-        redirect_to projects_url
+    rescue         
+        redirect_to projects_url,
+        notice: "Projektet du sökte efter kunde inte hittas."
     end
   end
 end

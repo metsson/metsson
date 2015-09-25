@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
     root 'pages#index'
 
     # (Static) pages
@@ -14,8 +14,11 @@ Rails.application.routes.draw do
 
     # Manager 
     namespace :manager do
-        root 'projects#index'
-        
-        resource :projects        
+        root 'projects#index'        
+        resource :projects   
+
+        # Manage customer cases
+        get 'cases', to: 'cases#index', as: :cases     
+        resource :cases, only: :delete
     end
 end

@@ -3,10 +3,9 @@
 <% end %>
 
 <div class="container">
-    <% if flash[:notice] %>
-    <div class="alert alert-warning animated bounceIn">
-        <p><%= flash[:notice] %></p>
-    </div>
+    <% if @cases %>
+        There are <strong><%= @cases.size %></strong> unread case(s).
+        <%= link_to "Go to cases", manager_cases_path, class: 'btn btn-success' %>
     <% end %>
     <% if !@projects or @projects.size == 0 %>
     <h1 class="text-center">

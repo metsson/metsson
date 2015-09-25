@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.form-validator
 //= require_tree .
+
+
+$(window).ready(function () {
+    $("#flash").toggleClass("animated fadeIn").fadeToggle(5000);
+
+    $.validate();
+})

@@ -14,23 +14,40 @@
 
 <div class="container">
   <%= render 'waiting_time', show_button: false %>
-  <%= form_for @case, url: customer_case_path(id: @case.id), html: { multipart: true } do |f| %>
+  <% if @case.errors.any? %>
+  <div class="alert alert-danger">
+    <h3>
+      <i class="fa fa-warning"></i> Vänta lite... 
+    </h3>
+    <p>
+      Jag förstod inte riktigt allt du ville ha sagt. Följande fel måste rättas innan du skickar kontaktformuläret igen.
+    </p>
+    <ul>
+    <% @case.errors.messages.values.each do |error| %>
+      <% error.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= form_for :case, url: customer_case_path(id: @case.id), html: { multipart: true } do |f| %>
     <div class="form-group">
       <%= f.label 'Namn', class: 'col-lg-2 control-label' %>
       <div class="col-lg-10">
-        <%= f.text_field :name, class: 'form-control', placeholder: 'Vem är du?' %>
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Vem är du?', data: { "validation" => "length", "validation-length" => "min20", "validation-error-msg" => "Vad heter du?"} %>
       </div>
     </div>
     <div class="form-group">
       <%= f.label 'Mailadress', class: 'col-lg-2 control-label' %>
       <div class="col-lg-10">
-        <%= f.text_field :email_address, class: 'form-control', placeholder: 'Din mailadress' %>
+        <%= f.email_field :email_address, class: 'form-control', placeholder: 'Din mailadress' %>
       </div>
     </div>
     <div class="form-group">
       <%= f.label 'Ärende', class: 'col-lg-2 control-label' %>
       <div class="col-lg-10">
-        <%= f.text_area :case, rows: '10', class: 'form-control', placeholder: 'Berätta vad du vill veta eller ha hjälp med...' %>
+        <%= f.text_area :message, rows: '10', class: 'form-control', placeholder: 'Berätta vad du vill veta eller ha hjälp med...', data: { "validation" => "length", "validation-length" => "min30", "validation-error-msg" => "Beskriv ditt ärende detaljerat."} %>
       </div>
     </div>   
     <div class="form-group">

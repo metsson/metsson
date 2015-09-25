@@ -29,6 +29,13 @@
 <%= csrf_meta_tags %>
 </head>
 <body <%= yield(:body_id) %> class="animated fadeIn">
+<% if flash[:notice] %>
+<div id="flash">
+    <p>
+        <%= flash[:notice] %>
+    </p>
+</div>
+<% end %>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="container">

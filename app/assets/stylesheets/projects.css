@@ -28,6 +28,10 @@
         vertical-align: middle;
     }
 
+.back-to-projects {
+    margin-bottom: 1.2em;
+}
+
 @media screen and (max-width: 680px) {
     .project-picture-gallery ul {
     overflow-x: scroll;

@@ -4,6 +4,7 @@ class Manager::ProjectsController < ApplicationController
   # GET /manager/projects
   def index
     @projects = Project.all
+    @cases = CustomerCase.all 
   end
 
   # GET /manager/projects/new
@@ -44,7 +45,7 @@ class Manager::ProjectsController < ApplicationController
     redirect_to manager_root_path, notice: "#{@project.title} was successfully deleted."
   end
 
-  private
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_manager_project
       @project = Project.find(params[:id])
