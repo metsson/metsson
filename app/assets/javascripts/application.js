@@ -19,5 +19,6 @@
 $(window).ready(function () {
     $("#flash").toggleClass("animated fadeIn").fadeToggle(5000);
 
+    /* Initiate jQuery validation plugin */
     $.validate();
 })
